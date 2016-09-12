@@ -1,0 +1,11 @@
+D:\Kinect\ControlsBasics-WPF\obj\Release\AugmentedRetail.csprojResolveAssemblyReference.cache
+D:\Kinect\ControlsBasics-WPF\obj\Release\Common\StandardStyles.baml
+D:\Kinect\ControlsBasics-WPF\obj\Release\SelectionDisplay.baml
+D:\Kinect\ControlsBasics-WPF\obj\Release\App.baml
+D:\Kinect\ControlsBasics-WPF\obj\Release\MainWindow.g.cs
+D:\Kinect\ControlsBasics-WPF\obj\Release\SelectionDisplay.g.cs
+D:\Kinect\ControlsBasics-WPF\obj\Release\App.g.cs
+D:\Kinect\ControlsBasics-WPF\obj\Release\AugmentedRetail_Content.g.cs
+D:\Kinect\ControlsBasics-WPF\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Kinect\ControlsBasics-WPF\obj\Release\AugmentedRetail_MarkupCompile.cache
+D:\Kinect\ControlsBasics-WPF\obj\Release\AugmentedRetail_MarkupCompile.lref

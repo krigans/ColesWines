@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Recommendations>
+  <Recommendation>
+    <Key>1</Key>
+    <Content>San Pietro Pinot Noir</Content>
+  </Recommendation>
+  <Recommendation>
+    <Key>2</Key>
+    <Content>Starborough Pinot Noir</Content>
+  </Recommendation>
+  <Recommendation>
+    <Key>3</Key>
+    <Content>Kenndy Shiraz</Content>
+  </Recommendation>
+</Recommendations>

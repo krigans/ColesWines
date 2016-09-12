@@ -1,0 +1,201 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.ControlsBasics.DisplayWhiteWineDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:k="http://schemas.microsoft.com/kinect/2013"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft.Samples.Kinect.ControlsBasics"
+        Name="WhiteWineDescriptionWindow"
+        Title="WhiteWineDetails"
+        mc:Ignorable="d"
+        d:DesignWidth="1200"
+        d:DesignHeight="700"
+        MinWidth="500"
+        MinHeight="700"
+        FontFamily="Segoe UI" Icon="Images/LoquorLand.png" WindowState="Maximized" Background="White">
+    <Window.Resources>
+        <PathGeometry x:Key="ChevronGeometry" x:Shared="False">
+            F1M150.001,146.9932L126.565,169.3822L126.565,153.5962L150.001,130.6182L173.435,153.5962L173.435,169.3822z
+        </PathGeometry>
+
+        <Path x:Key="ChevronUp" Height="48" Width="48" Stretch="Uniform" Canvas.Top="0" x:Shared="False"
+          Data="{StaticResource ChevronGeometry}"
+          Fill="{Binding FallbackValue=Black, Path=Foreground,RelativeSource={RelativeSource AncestorType={x:Type local:KinectHoverButton}}}">
+            <Path.RenderTransformOrigin>0.5,0.5</Path.RenderTransformOrigin>
+            <Path.RenderTransform>
+                <RotateTransform Angle="0"/>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path x:Key="ChevronRight" Height="48" Width="48" Stretch="Uniform" Canvas.Top="0" x:Shared="False"
+          Data="{StaticResource ChevronGeometry}"
+          Fill="{Binding FallbackValue=Black, Path=Foreground,RelativeSource={RelativeSource AncestorType={x:Type local:KinectHoverButton}}}">
+            <Path.RenderTransformOrigin>0.5,0.5</Path.RenderTransformOrigin>
+            <Path.RenderTransform>
+                <RotateTransform Angle="90"/>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path x:Key="ChevronDown" Height="48" Width="48" Stretch="Uniform" Canvas.Top="0" x:Shared="False"
+          Data="{StaticResource ChevronGeometry}"
+          Fill="{Binding FallbackValue=Black, Path=Foreground,RelativeSource={RelativeSource AncestorType={x:Type local:KinectHoverButton}}}">
+            <Path.RenderTransformOrigin>0.5,0.5</Path.RenderTransformOrigin>
+            <Path.RenderTransform>
+                <RotateTransform Angle="180"/>
+            </Path.RenderTransform>
+        </Path>
+        <Style x:Key="KinectHoverButtonStyle" TargetType="{x:Type local:KinectHoverButton}">
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="DarkGray"/>
+            <Setter Property="BorderThickness" Value="0"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type local:KinectHoverButton}">
+                        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}">
+                                <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{TemplateBinding Content}"></ContentPresenter>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="BorderBrush" Value="White"/>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                </Trigger>
+                <Trigger Property="IsHandPointerOver" Value="True">
+                    <!--<Setter Property="Background" Value="#5A5B5B"/>-->
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="KinectHoverButtonScrollUpStyle" TargetType="{x:Type local:KinectHoverButton}" BasedOn="{StaticResource KinectHoverButtonStyle}">
+            <Setter Property="Content" Value="{StaticResource ChevronUp}"/>
+        </Style>
+
+        <Style x:Key="KinectHoverButtonScrollRightStyle" TargetType="{x:Type local:KinectHoverButton}" BasedOn="{StaticResource KinectHoverButtonStyle}">
+            <Setter Property="Content" Value="{StaticResource ChevronRight}"/>
+        </Style>
+
+        <Style x:Key="KinectHoverButtonScrollDownStyle" TargetType="{x:Type local:KinectHoverButton}" BasedOn="{StaticResource KinectHoverButtonStyle}">
+            <Setter Property="Content" Value="{StaticResource ChevronDown}"/>
+        </Style>
+
+        <Style x:Key="KinectHoverButtonScrollLeftStyle" TargetType="{x:Type local:KinectHoverButton}" BasedOn="{StaticResource KinectHoverButtonStyle}">
+            <Setter Property="Content" Value="{StaticResource ChevronLeft}"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid Margin="-2,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230*"/>
+            <ColumnDefinition Width="839*"/>
+            <ColumnDefinition Width="123*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Canvas x:Name="imgCanvasDisplay" Height="480" Margin="90,0,109,189" VerticalAlignment="Bottom" Grid.RowSpan="2" Grid.Column="1">
+            <Grid x:Name="KinectViewGridDisplay" Margin="325,10,109,189" Height="100" VerticalAlignment="Center">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="277"/>
+            </Grid>
+        </Canvas>
+
+        <Grid Grid.Row="0"  Margin="10,0,0,0" Grid.ColumnSpan="3" Height="100" VerticalAlignment="Top">
+            <!--<Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Source="Images/LiquorLand.png" Stretch="Uniform" Margin="-10,0,0,32" Width="500" />-->
+            <!--<Image HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Source="Images/Image2.png" Stretch="UniformToFill" Margin="-10,0,0,0" Height="100" />-->
+            <k:KinectUserViewer k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Hidden" />
+
+            <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" x:Name="sensorChooserUiDisplayDetails" Margin="1150,0,0,0"></k:KinectSensorChooserUI>
+
+        </Grid>
+        <!--<Grid Grid.Row="3" Grid.ColumnSpan="2" Height="200" VerticalAlignment="Top">
+            <Image HorizontalAlignment="Left" VerticalAlignment="Bottom" Source="Images/Red_Wine_Desc.png" Margin="0,0,0,-215" Stretch="Uniform" Height="415" Width="245"/>
+        </Grid>-->
+        <!--<k:KinectRegion Grid.Row="1" x:Name="kinectRegion" Margin="0,280,0,-190" Grid.ColumnSpan="2">-->
+        <k:KinectRegion x:Name="kinectRegionDisplay" Margin="0,0,0,-101" Height="746" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Background="White">
+            <!--<Grid x:Name="kinectRegionGrid" Margin="10,20,10,20">-->
+
+            <Grid x:Name="kinectRegionGridDisplay" Margin="10,20,10,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="74*"/>
+                    <ColumnDefinition Width="363*"/>
+                    <ColumnDefinition Width="518*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="60*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="170" />
+                </Grid.RowDefinitions>
+
+                <!--<Frame x:Name="_mainFrame" NavigationUIVisibility="Hidden"/>-->
+                <Image HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Source="Images/Image2.png" Stretch="UniformToFill" Margin="-10,0,-161,94" Height="100" Grid.ColumnSpan="5" Grid.RowSpan="2" />
+
+                <k:KinectTileButton x:Name="homeChoiceButton" Content="" HorizontalAlignment="Left" Margin="417,533,0,0" VerticalAlignment="Top" Height="75" Width="85" Foreground="White" BorderBrush="White" Grid.Column="2" Click="homeChoiceButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="3">
+                    <k:KinectTileButton.Background>
+                        <ImageBrush ImageSource="Images/home_button.png"/>
+                    </k:KinectTileButton.Background>
+                </k:KinectTileButton>
+
+                <k:KinectTileButton x:Name="backChoiceButton" Content="" HorizontalAlignment="Left" Margin="534,532,-22,0" VerticalAlignment="Top" Height="75" Width="85" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.479,0.273"  Grid.Column="2" Click="backChoiceButton_Click" Grid.RowSpan="2" Grid.ColumnSpan="3">
+
+                    <k:KinectTileButton.Background>
+                        <ImageBrush ImageSource="/Images/back_button.png"/>
+                    </k:KinectTileButton.Background>
+
+                </k:KinectTileButton>
+
+                <k:KinectTileButton x:Name="locationButton" Content="" HorizontalAlignment="Left" Margin="518,421,-21,0" VerticalAlignment="Top" Height="79" Width="100" Foreground="White" BorderBrush="White" RenderTransformOrigin="0.479,0.273"  Grid.Column="2" Click="locationButton_Click" Grid.ColumnSpan="3">
+
+                    <k:KinectTileButton.Background>
+                        <ImageBrush ImageSource="/Images/location_button.png"/>
+                    </k:KinectTileButton.Background>
+
+                </k:KinectTileButton>
+
+                <!--<k:KinectTileButton x:Name="infoHelpButton" Content="" HorizontalAlignment="Left" Margin="375,531,0,0" VerticalAlignment="Top" Height="75" Width="85" Foreground="White" BorderBrush="White" RenderTransformOrigin="-0.929,0.373" Grid.Column="2" Grid.RowSpan="2" >
+
+                    <k:KinectTileButton.Background>
+                        <ImageBrush ImageSource="/Images/info_button.png"/>
+                    </k:KinectTileButton.Background>
+                </k:KinectTileButton>-->
+
+
+
+
+                <!--<k:KinectScrollViewer Grid.Row="0" x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled" Margin="124,5,-124,165" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2">-->
+                <k:KinectScrollViewer Grid.Row="0" x:Name="scrollViewerDisplay" HorizontalScrollBarVisibility="Disabled"  VerticalScrollBarVisibility="Disabled"  Margin="0,-41,-136,65" Grid.ColumnSpan="5">
+                    <!--<WrapPanel VerticalAlignment="Center"  x:Name="wrapPanel" Orientation="Vertical" ButtonBase.Click="KinectTileButtonClick">-->
+                    <!--<WrapPanel VerticalAlignment="Center"  x:Name="wrapPanelDisplay" Orientation="Vertical" Background="White" Width="1020">-->
+                    <!--<Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Images/WineDeatils.png" Stretch="UniformToFill" Height="507" Width="1025"/>-->
+
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Images/WhiteWine/Amberley Estate Chenin Blanc 750mL_Details.png" Stretch="Fill" Height="527" Width="1025"/>
+
+                    <!--</WrapPanel>-->
+                </k:KinectScrollViewer>
+                <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0, 10, 0, 10" Grid.ColumnSpan="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <local:KinectHoverButton Grid.Column="0" Style="{StaticResource KinectHoverButtonScrollLeftStyle}" Click="PageLeftButtonClick"  IsEnabled="{Binding PageLeftEnabled, ElementName=WineDescriptionWindow}" Width="150" Height="200" Margin="185,85,185,-135">
+                        <local:KinectHoverButton Content="KinectHoverButton" HorizontalAlignment="Left" Margin="89,61,0,0" VerticalAlignment="Top"/>
+                    </local:KinectHoverButton>
+                    <local:KinectHoverButton Grid.Column="2" Style="{StaticResource KinectHoverButtonScrollRightStyle}" Click="PageRightButtonClick" IsEnabled="{Binding PageRightEnabled, ElementName=WineDescriptionWindow}" Width="150" Height="200" Margin="180,85,189,-135"/>
+
+                </Grid>
+            </Grid>
+        </k:KinectRegion>
+        <Label x:Name="lblMessageDisplay" Content="" HorizontalAlignment="Left" Margin="14,44,0,0" Grid.Row="1" VerticalAlignment="Top" Height="75" Width="290" FontSize="22" FontFamily="Showcard Gothic" Grid.ColumnSpan="2"/>
+    </Grid>
+
+</Window>

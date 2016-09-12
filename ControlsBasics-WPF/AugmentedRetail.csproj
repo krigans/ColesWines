@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69BB0E72-9FA9-43B7-9673-1BCB6F7F3877}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Samples.Kinect.ControlsBasics</RootNamespace>
+    <AssemblyName>AugmentedRetail</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Optimize>true</Optimize>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputPath>$(BinDir)$(PlatformTarget).$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Kinect">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(KINECTSDK10_DIR)\Assemblies\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DisplayAradonRioja.xaml.cs">
+      <DependentUpon>DisplayAradonRioja.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayBanrockCabernet.xaml.cs">
+      <DependentUpon>DisplayBanrockCabernet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayBanrockCrimson.xaml.cs">
+      <DependentUpon>DisplayBanrockCrimson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayBanrockMoscato.xaml.cs">
+      <DependentUpon>DisplayBanrockMoscato.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayBrandLaira.xaml.cs">
+      <DependentUpon>DisplayBrandLaira.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayDeBortoli.xaml.cs">
+      <DependentUpon>DisplayDeBortoli.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayGalwayPipe.xaml.cs">
+      <DependentUpon>DisplayGalwayPipe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayMcWilliamsHanwood.xaml.cs">
+      <DependentUpon>DisplayMcWilliamsHanwood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayPenfoldsClub.xaml.cs">
+      <DependentUpon>DisplayPenfoldsClub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplaySpirit.xaml.cs">
+      <DependentUpon>DisplaySpirit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplaySpiritDetails.xaml.cs">
+      <DependentUpon>DisplaySpiritDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayValleyChardonnay.xaml.cs">
+      <DependentUpon>DisplayValleyChardonnay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayValleyRiesling.xaml.cs">
+      <DependentUpon>DisplayValleyRiesling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayWhiteWine.xaml.cs">
+      <DependentUpon>DisplayWhiteWine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayWhiteWineDetails.xaml.cs">
+      <DependentUpon>DisplayWhiteWineDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayWine.xaml.cs">
+      <DependentUpon>DisplayWine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DisplayWineDetails.xaml.cs">
+      <DependentUpon>DisplayWineDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KinectHoverButton.cs" />
+    <Compile Include="LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LiquorLandMain.xaml.cs">
+      <DependentUpon>LiquorLandMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Location.xaml.cs">
+      <DependentUpon>Location.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainModel.cs" />
+    <Compile Include="MainViewModel.cs" />
+    <Compile Include="obj\Debug\AugmentedRetail_Content.g.i.cs" />
+    <Compile Include="obj\Debug\ControlsBasics-WPF_Content.g.i.cs" />
+    <Compile Include="obj\Debug\SelectionDisplay.g.cs" />
+    <Compile Include="PopupExample.xaml.cs">
+      <DependentUpon>PopupExample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectionDisplay.xaml.cs">
+      <DependentUpon>SelectionDisplay.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Temp.xaml.cs">
+      <DependentUpon>Temp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Wines.cs" />
+    <Page Include="Common\StandardStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayAradonRioja.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayBanrockCabernet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayBanrockCrimson.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayBanrockMoscato.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayBrandLaira.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayDeBortoli.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayGalwayPipe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayMcWilliamsHanwood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayPenfoldsClub.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplaySpirit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplaySpiritDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayValleyChardonnay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayValleyRiesling.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DisplayWhiteWine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayWhiteWineDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayWine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DisplayWineDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LandingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LiquorLandMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Location.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PopupExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectionDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Temp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="obj\Debug\AugmentedRetail.g.resources" />
+    <EmbeddedResource Include="obj\Debug\Microsoft.Samples.Kinect.ControlsBasics.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Release\AugmentedRetail.g.resources" />
+    <EmbeddedResource Include="obj\Release\ControlsBasics-WPF.g.resources" />
+    <EmbeddedResource Include="obj\Release\Microsoft.Samples.Kinect.ControlsBasics.Properties.Resources.resources" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="obj\Debug\App.baml" />
+    <None Include="obj\Debug\AugmentedRetail.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\AugmentedRetail.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\AugmentedRetail_MarkupCompile.cache" />
+    <None Include="obj\Debug\AugmentedRetail_MarkupCompile.i.cache" />
+    <None Include="obj\Debug\AugmentedRetail_MarkupCompile.i.lref" />
+    <None Include="obj\Debug\AugmentedRetail_MarkupCompile.lref" />
+    <None Include="obj\Debug\Common\StandardStyles.baml" />
+    <None Include="obj\Debug\ControlsBasics-WPF.csproj.GenerateResource.Cache" />
+    <None Include="obj\Debug\ControlsBasics-WPF.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Debug\ControlsBasics-WPF_MarkupCompile.i.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\SelectionDisplay.baml" />
+    <None Include="obj\Release\App.baml" />
+    <None Include="obj\Release\AugmentedRetail.csproj.GenerateResource.Cache" />
+    <None Include="obj\Release\AugmentedRetail.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\AugmentedRetail_MarkupCompile.cache" />
+    <None Include="obj\Release\AugmentedRetail_MarkupCompile.i.cache" />
+    <None Include="obj\Release\AugmentedRetail_MarkupCompile.i.lref" />
+    <None Include="obj\Release\AugmentedRetail_MarkupCompile.lref" />
+    <None Include="obj\Release\Common\StandardStyles.baml" />
+    <None Include="obj\Release\ControlsBasics-WPF.csproj.GenerateResource.Cache" />
+    <None Include="obj\Release\ControlsBasics-WPF.csprojResolveAssemblyReference.cache" />
+    <None Include="obj\Release\ControlsBasics-WPF_MarkupCompile.cache" />
+    <None Include="obj\Release\ControlsBasics-WPF_MarkupCompile.lref" />
+    <None Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Release\MainWindow.baml" />
+    <None Include="obj\Release\SelectionDisplay.baml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Wines\Microsoft.Kinect.Toolkit\Microsoft.Kinect.Toolkit.csproj">
+      <Project>{c6f9c31b-6130-4443-a5cc-ef0664552ecd}</Project>
+      <Name>Microsoft.Kinect.Toolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Kinect.Toolkit.Controls\Microsoft.Kinect.Toolkit.Controls.csproj">
+      <Project>{4508C4D1-85BB-4F3F-9E3B-CC93D231C65D}</Project>
+      <Name>Microsoft.Kinect.Toolkit.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Debug\Images\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Debug\Images\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Women\Shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt1.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt2.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt3.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt4.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt5.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt6.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt7.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt8.png" />
+    <Resource Include="AnyCPU.Debug\Images\Shirts\Men\shirt9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men\shirt9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Men -old\Shirt9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women\shirt9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="AnyCPU.Release\Images\Shirts\Women - old\Shirt9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".Debug\KinectInteraction180_32.dll" />
+    <Content Include=".Debug\KinectInteraction180_64.dll" />
+    <Content Include=".Debug\Microsoft.Kinect.Toolkit.Controls.dll" />
+    <Content Include=".Debug\Microsoft.Kinect.Toolkit.Controls.pdb" />
+    <Content Include=".Debug\Microsoft.Kinect.Toolkit.Interaction.dll" />
+    <Content Include=".Release\KinectInteraction180_32.dll" />
+    <Content Include=".Release\KinectInteraction180_64.dll" />
+    <Content Include=".Release\Microsoft.Kinect.Toolkit.Controls.dll" />
+    <Content Include=".Release\Microsoft.Kinect.Toolkit.Controls.pdb" />
+    <Content Include=".Release\Microsoft.Kinect.Toolkit.Interaction.dll" />
+    <Resource Include="Recommendation.xml" />
+    <Resource Include="AnyCPU.Debug\Images\Logo.png" />
+    <Resource Include="AnyCPU.Debug\Images\Kinect.ico" />
+    <Resource Include="AnyCPU.Debug\Images\XR_Logo.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine1.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine2.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine3.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine4.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine5.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine6.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine7.png" />
+    <Resource Include="AnyCPU.Debug\Images\Wines\Wine8.png" />
+    <Resource Include="AnyCPU.Debug\Images\Bottle_and_glasses.gif" />
+    <Resource Include="AnyCPU.Debug\Images\SlideShow\Welcome1.png" />
+    <Resource Include="AnyCPU.Debug\Images\SlideShow\Welcome2.png" />
+    <Content Include="ControlsBasics-WPF.sln" />
+    <Resource Include="Images\Female.png" />
+    <Resource Include="Images\Kinect.ico" />
+    <Resource Include="Images\Logo.png" />
+    <Resource Include="Images\LoquorLand.png" />
+    <Resource Include="Images\Male.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt1.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt10.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt11.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt12.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt13.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt14.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt15.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt16.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt17.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt18.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt19.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt2.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt20.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt3.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt4.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt5.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt6.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt7.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt8.png" />
+    <Resource Include="Images\Shirts\Men -old\Shirt9.png" />
+    <Resource Include="Images\Shirts\Men\shirt1.png" />
+    <Resource Include="Images\Shirts\Men\shirt2.png" />
+    <Resource Include="Images\Shirts\Men\shirt3.png" />
+    <Resource Include="Images\Shirts\Men\shirt4.png" />
+    <Resource Include="Images\Shirts\Men\shirt5.png" />
+    <Resource Include="Images\Shirts\Men\shirt6.png" />
+    <Resource Include="Images\Shirts\Men\shirt7.png" />
+    <Resource Include="Images\Shirts\Men\shirt8.png" />
+    <Resource Include="Images\Shirts\Men\shirt9.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt1.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt10.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt11.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt12.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt13.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt14.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt15.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt16.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt17.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt18.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt19.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt2.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt20.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt21.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt22.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt23.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt24.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt3.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt4.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt5.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt6.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt7.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt8.png" />
+    <Resource Include="Images\Shirts\Women - old\Shirt9.png" />
+    <Resource Include="Images\Shirts\Women\shirt1.png" />
+    <Resource Include="Images\Shirts\Women\shirt2.png" />
+    <Resource Include="Images\Shirts\Women\shirt3.png" />
+    <Resource Include="Images\Shirts\Women\shirt4.png" />
+    <Resource Include="Images\Shirts\Women\shirt5.png" />
+    <Resource Include="Images\Shirts\Women\shirt6.png" />
+    <Resource Include="Images\Shirts\Women\shirt7.png" />
+    <Resource Include="Images\Shirts\Women\shirt8.png" />
+    <Resource Include="Images\Shirts\Women\shirt9.png" />
+    <Resource Include="Images\XR_Logo.png" />
+    <Resource Include="obj\Debug\AugmentedRetail.csproj.FileListAbsolute.txt" />
+    <Resource Include="Images\Wines\Wine1.png" />
+    <Resource Include="Images\Wines\Wine2.png" />
+    <Resource Include="Images\Wines\Wine3.png" />
+    <Resource Include="Images\Wines\Wine4.png" />
+    <Resource Include="Images\Wines\Wine5.png" />
+    <Resource Include="Images\Wines\Wine6.png" />
+    <Resource Include="Images\Wines\Wine7.png" />
+    <Resource Include="Images\Wines\Wine8.png" />
+    <Resource Include="Images\LiquorLand.png" />
+    <Resource Include="Images\Red_Wine1.png" />
+    <Resource Include="Images\Red_Wine2.png" />
+    <Resource Include="Images\Red_Wine_Desc.png" />
+    <Resource Include="Images\Jacob_Creek.png" />
+    <Resource Include="Images\Home.png" />
+    <Resource Include="Images\BackButton.jpg" />
+    <Resource Include="Images\offers\Offer1.png" />
+    <Resource Include="Images\offers\Offer2.png" />
+    <Resource Include="Images\offers\Offer3.png" />
+    <Resource Include="Images\Image2.png" />
+    <Resource Include="Images\GeorgeWine.png" />
+    <Resource Include="Images\Bottle_and_glasses.gif" />
+    <Resource Include="Images\SlideShow\Welcome1.png" />
+    <Resource Include="Images\SlideShow\Welcome2.png" />
+    <Resource Include="Images\home_button.png" />
+    <Resource Include="Images\info_button.png" />
+    <Resource Include="Images\back_button.png" />
+    <Resource Include="Images\WineDeatils.png" />
+    <Resource Include="Images\location.png" />
+    <Resource Include="Images\location_button.png" />
+    <Resource Include="Images\WineDeatils_old.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\GlassWine.gif" />
+    <Resource Include="Images\GlassWine2.gif" />
+    <Resource Include="Images\GlassWine3.gif" />
+    <Resource Include="Images\Help.gif" />
+    <Resource Include="Images\Help_01.gif" />
+    <Resource Include="Images\Help_02.gif" />
+    <Resource Include="Images\Help_03.gif" />
+    <Resource Include="Images\Help_04.gif" />
+    <Resource Include="Images\Close_button.png" />
+    <Resource Include="Images\Fortified\WineDeatils.png" />
+    <Resource Include="Images\RedWine\WineDeatils.png" />
+    <Resource Include="Images\WhiteWine\WineDeatils.png" />
+    <Resource Include="Images\RedWine\Aradon Rioja 750mL.png" />
+    <Resource Include="Images\RedWine\Banrock Station Cabernet Merlot 750mL.png" />
+    <Resource Include="Images\RedWine\Banrock Station Crimson Cabernet 750mL.png" />
+    <Resource Include="Images\WhiteWine\Amberley Estate Chenin Blanc 750mL.png" />
+    <Resource Include="Images\WhiteWine\Annie%27s Lane Clare Valley Chardonnay 750mL.png" />
+    <Resource Include="Images\WhiteWine\Annie%27s Lane Clare Valley Riesling 750mL.png" />
+    <Resource Include="Images\WhiteWine\Banrock Station Moscato 750mL.png" />
+    <Resource Include="Images\Fortified\Brown Brothers Australian Tawny 750mL.png" />
+    <Resource Include="Images\Fortified\De Bortoli Noble One Botrytis Semillon 375mL.png" />
+    <Resource Include="Images\RedWine\Aradon Rioja 750mL_Details.png" />
+    <Resource Include="Images\RedWine\Banrock Station Cabernet Merlot 750mL_Details.png" />
+    <Resource Include="Images\RedWine\Banrock Station Crimson Cabernet 750mL_Details.png" />
+    <Resource Include="Images\RedWine\Birds Eye View Shiraz 750ml.png" />
+    <Resource Include="Images\RedWine\Birds Eye View Shiraz 750ml_Details.png" />
+    <Resource Include="Images\RedWine\Brand%27s Laira Coonawarra Blockers Cabernet Sauvignon 750mL.png" />
+    <Resource Include="Images\RedWine\Brand%27s Laira Coonawarra Blockers Cabernet Sauvignon 750mL_Details.png" />
+    <Resource Include="Images\WhiteWine\Amberley Estate Chenin Blanc 750mL_Details.png" />
+    <Resource Include="Images\WhiteWine\Annie%27s Lane Clare Valley Chardonnay 750mL_Details.png" />
+    <Resource Include="Images\WhiteWine\Annie%27s Lane Clare Valley Riesling 750mL_Details.png" />
+    <Resource Include="Images\WhiteWine\Banrock Station Moscato 750mL_Details.png" />
+    <Resource Include="Images\Fortified\Brown Brothers Australian Tawny 750mL_Details.png" />
+    <Resource Include="Images\Fortified\De Bortoli Noble One Botrytis Semillon 375mL_Details.png" />
+    <Resource Include="Images\Fortified\Galway Pipe Fine Old Tawny Port 750mL.png" />
+    <Resource Include="Images\Fortified\Galway Pipe Fine Old Tawny Port 750mL_Details.png" />
+    <Resource Include="Images\Fortified\McWilliams Hanwood Classic Tawny 750mL.png" />
+    <Resource Include="Images\Fortified\McWilliams Hanwood Classic Tawny 750mL_Details.png" />
+    <Resource Include="Images\Fortified\Penfolds Club Old Tawny Port 750mL.png" />
+    <Resource Include="Images\Fortified\Penfolds Club Old Tawny Port 750mL_Details.png" />
+    <Content Include="obj\Debug\AugmentedRetail.exe" />
+    <Content Include="obj\Debug\AugmentedRetail.pdb" />
+    <Resource Include="obj\Debug\ControlsBasics-WPF.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Resource Include="obj\Release\AugmentedRetail.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\AugmentedRetail.exe" />
+    <Resource Include="obj\Release\ControlsBasics-WPF.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\ControlsBasics-WPF.exe" />
+    <Content Include="obj\Release\TempPE\Properties.Resources.Designer.cs.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
